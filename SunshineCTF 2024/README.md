@@ -8,7 +8,7 @@ Rank: **8th**
 
 # [**Challenges**](#challenges)
 
-| Name                          | Category  | Description           | Difficulty [⭐⭐⭐⭐⭐] |
+| Name                          | Category  | Description           | Difficulty <br> [⭐⭐⭐⭐⭐] |
 | ----------------------------- | --------- | --------------------- | ------------------ |
 | [Certified](Crypto/Certified) | Crypto    | base64                | ⭐                  |
 | [Adventure Cipher](Crypto/Adventure%20Cipher)            | Crypto    | Substitution Cipher   | ⭐⭐⭐                |
