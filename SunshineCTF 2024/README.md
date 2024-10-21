@@ -2,6 +2,7 @@
 Team: World Wide Flags
 Rank: 8th
 
+<img src='./images/sunshiness.png'>
 ![[sunshiness.png]]
 ![[sunshinesss.jpeg]]
 
