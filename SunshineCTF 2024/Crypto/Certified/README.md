@@ -4,7 +4,7 @@
 ### Files
 [server.pem](./server.pem)
 
-### Writeup
+## Writeup
 Reading the description tells us that the flag is given directly to us.
 
 So I tried to directly base64 decode the certificate using cyberchef. Then looking at the strings we get an interesting one which seems to be base64 encoded string with some extra data around it:
