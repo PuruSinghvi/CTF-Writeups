@@ -3,7 +3,7 @@
 ## Description
 ?
 ## Files
-[[./server.pem]]
+(server.pem)[[./server.pem]]
 
 ## Writeup
 Reading the description tells us that the flag is given directly to us.
