@@ -1,9 +1,10 @@
 # [**Scoreboard**](#scoreboard)
 Team: **World Wide Flags** <br>
 Rank: **8th**
-
-<img src='/images/sunshiness.png'>
-<img src='/images/sunshinesss.jpeg'>
+<p align='center'>
+  <img src='/images/sunshiness.png'>
+  <img src='/images/sunshinesss.jpeg'>
+</p>
 
 # [**Challenges**](#challenges)
 
