@@ -1,4 +1,4 @@
-## Name: Certified
+## Certified
 
 ## Description
 ?
