@@ -10,7 +10,7 @@ Rank: **8th**
 | Name                          | Category  | Description           | Difficulty [⭐⭐⭐⭐⭐] |
 | ----------------------------- | --------- | --------------------- | ------------------ |
 | [Certified](Crypto/Certified) | Crypto    | base64                | ⭐                  |
-| Adventure Cipher              | Crypto    | Substitution Cipher   | ⭐⭐⭐                |
+| [Adventure Cipher](Crypto/Adventure Cipher)            | Crypto    | Substitution Cipher   | ⭐⭐⭐                |
 | Doubly Secure                 | Crypto    | age encryption        | ⭐⭐                 |
 | Twine                         | Reversing |                       | ⭐                  |
 | Build A Flag Workshop         | Reversing |                       | ⭐⭐                 |
