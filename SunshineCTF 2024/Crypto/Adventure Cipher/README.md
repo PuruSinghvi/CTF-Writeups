@@ -40,7 +40,7 @@ This gave us a very interesting string `alf{nidjklae{ninmjr{noh{winzf}`
 I could infer from this that we have mapped `}` correctly, but rest is unclear.
 
 To further analyze this, I looked at the count of each word:
-```json
+```js
 {'Escapade': 329, 'Wander': 198, 'Ridge': 701, 'Passage': 69, 'Travel': 51, 'Pilgrimage': 421, 'Venture': 230, 'Quest': 146, 'Trek': 150, 'Wanderlust': 231, 'Journey': 72, 'Adventure': 199, 'Pathway': 190, 'Voyage': 295, 'Exploration': 224, 'Trail': 74, 'Migration': 109, 'Expedition': 82, 'Pursuit': 78, 'Traverse': 53, 'Sojourn': 4, 'Crossing': 21, 'Odyssey': 69, 'Field': 33, 'Discovery': 2, 'Survivor': 11, 'Roaming': 6, 'River': 1, 'Bridge': 4, 'Valley': 1}
 ```
 
