@@ -1,5 +1,5 @@
 # [**Scoreboard**](#scoreboard)
-Team: World Wide Flags
+Team: World Wide Flags <br>
 Rank: 8th
 
 <img src='/images/sunshiness.png'>
