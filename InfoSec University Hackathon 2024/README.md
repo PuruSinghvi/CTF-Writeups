@@ -472,7 +472,7 @@ Giving the two inputs `to_be_or_not_to_be` and `SH00k_7h4t_Sph3re_Whit_4ll_d47_l
 #### Blindness `Hard` `500 pts`
 This challenge was very interesting, there was no single binary for us to reverse. Instead, we had to connect to a service, which gave us random strings.
 During initial analysis, I pasted these strings on Cyberchef, and it instantly decoded them with base64, then applied Gunzip decompression, to give us an ELF file.
-![[Pasted image 20250114164056.png]]
+<br><img src='Pasted image 20250114164056.png'>
 It mentions in the service, that we have to find the correct password for this binary. Like this, we have to solve 60 different binaries, reply with their passwords, in under 60 seconds.
 Now the first thing I did, is that I applied strings to the first binary I got, and got this:
 ```
@@ -499,14 +499,14 @@ Looking into the decompiled output in IDA, the issue was clear, the string was b
 This put me into a deep think on how to solve this challenge, I thought maybe we can use some automatic decompiler in python, but that seemed too complicated and might not even fit the 1s per binary requirement. What I did next is, manual hex analysis of the binaries.
 
 As per my observation, it was clear that we get only two types of binaries, one in which the first string is the password, other in which the first string is XORed with something, which becomes the password. I opened multiple binaries of both the types in https://hexed.it/ to see their differences:
-![[Pasted image 20250115015112.png]]
+<br><img src='Pasted image 20250115015112.png'>
 
 Both type of binaries were almost  same, but there was only one part which was different:
 `xor.elf`:
-![[Pasted image 20250115015242.png]]
+<br><img src='Pasted image 20250115015242.png'>
 
 `noxor.elf`:
-![[Pasted image 20250115015544.png]]
+<br><img src='Pasted image 20250115015544.png'>
 
 These were my observations:
 - The string which I considered as the correct password initially, was always starting at `0x2000` in both the binaries and always had a length of 20 chars.
@@ -674,7 +674,7 @@ read_pcap_and_store_icmp_data(pcap_file, output_file)
 ```
 
 Now, I simply decrypted the data in Cyberchef and got the flag:
-![[Pasted image 20250115032613.png]]
+<br><img src='Pasted image 20250115032613.png'>
 
 #### Sinister Network `Hard` `500 pts`
 This challenge turned out to be much simpler than I initially anticipated, largely because I identified the right approach from the very start!
@@ -682,10 +682,10 @@ After opening the packet capture in Wireshark, I followed the TCP streams, and m
 
 So, I used the following expression in Wireshark to search for flag keyword: `frame contains "flag"`
 And I found some interesting packets:
-![[Pasted image 20250115033706.png]]
+<br><img src='Pasted image 20250115033706.png'>
 
 I was going through the packets next to these packets, but I was not able to find anything for a while. Interestingly, all three of these packets with the flag keyword were using the FTP Protocol. So I looked at all the ftp packets:
-![[Pasted image 20250115033914.png]]
+<br><img src='Pasted image 20250115033914.png'>
 
 And this is everything that I needed to solve this challenge!
 - `USER ilovefernet` and `PASS encryption` gave us a hint that this might be the Fernet encryption/decryption.
@@ -693,7 +693,7 @@ And this is everything that I needed to solve this challenge!
 - The random string `OFgtX2lRQ21iZ2x0M193YTRaTlV0S2FfYlQyenlwOHFPSDVfa0pBYVFVST0=` was base64 encoded, which when decoded:`8X-_iQCmbglt3_wa4ZNUtKa_bT2zyp8qOH5_kJAaQUI=` gave a perfect length key for Fernet Decryption.
 
 So, I put these values in [Cyberchef](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)Fernet_Decrypt('8X-_iQCmbglt3_wa4ZNUtKa_bT2zyp8qOH5_kJAaQUI%3D')&input=WjBGQlFVRkJRbTVuYm5oWmFVUjJVV1V5VDJwak9FcE1ZVzlTTkVVeFpVZHdUelZYWlRaUFRRPT1WMUJWTXpsV2NFVkZNa3RYZWpsTlFWSjFXa1p2YjNWM09DMTVjSE56TmpreGVXWXlXV015T1E9PVl6aFNhbEZ6VUV4d2RrZFBaREkzYzJVNE9VbEVlR1JoTTJsdE1UUk1SR2cxWkRGMFExQmpQUT09) to get the flag:
-![[Pasted image 20250115034420.png]]
+<br><img src='Pasted image 20250115034420.png'>
 
 ## Mobile:
 #### Calcios `Easy` `100 pts`
@@ -724,7 +724,7 @@ The function retrieves the value associated with the key `"AppConfig"` from `Inf
 Then it checks if this exists, and does some other stuff...but it was clear that this was the `id` we were looking for!
 
 I used https://plist-viewer.com/ to view `Info.plist`:
-![[Pasted image 20250115041533.png]]
+<br><img src='Pasted image 20250115041533.png'>
 
 The `AppConfigID`, which had the value `6168862` was our id!
 https://challXXX.eng.run/flag/config?id=6168862 (with the correct instance address) gave us the flag!
@@ -1082,7 +1082,7 @@ Then I focused on the challenge name and description, I had to look for the clip
 
 So I got this database, opened it in online sqlite viewer: https://inloop.github.io/sqlite-viewer/
 We can see the clipboard content in the `ClipboardPayload` column in the `SmartLookup` table. The `ClipboardPayload` column contains base64 encoded string of the clipboard content.
-![[Pasted image 20250115164321.png]]
+<br><img src='Pasted image 20250115164321.png'>
 Upon downloading these payloads, one of them had this: `[{"content":"Wm14aFozdDBjalJqTXpWZmRHZzBkRjkwTVcwelgyTTBibTR3ZEY5b01HeGtmUT09DQ==","formatName":"Text"}]`
 Decoding from base64, gave us the flag: `flag{tr4c35_th4t_t1m3_c4nn0t_h0ld}`
 
@@ -1330,8 +1330,8 @@ if __name__ == '__main__':
 Analyzing the source files, we have to access the admin.html page which has the flag, via admin.py. So we have to access the admin page running on localhost:80. We can't access it directly, but we can use the Snap service provided to us, i.e. by performing SSRF. For this we need to access localhost.
 
 The server has blacklisted several IPs and patterns to prevent us from accessing this:
-![[Pasted image 20250115160147.png]]
-![[Pasted image 20250115160201.png]]
+<br><img src='Pasted image 20250115160147.png'>
+<br><img src='Pasted image 20250115160201.png'>
 Now, `127.0.0.1` is directly blacklisted, so we could have tried `127.0.0.2` or `127.0.0.3`, but these will get blocked too as the first regex pattern blocks out everything starting with 127.
 
 However, we can easily bypass this by using any other representation of 127.0.0.3, like Octal or Hexadecimal:
