@@ -845,11 +845,11 @@ Looking at the equation and the challenge name `smithy` instantly hints us on th
 
 We can get two equations:
 
-$$ f_0 = (sec+p_0)^{-1} \bmod q - k_0 $$
-$$ f_1 = (sec+p_1)^{-1} \bmod q - k_1 $$
-this can be written mod q as two polynomials of the form:
-$$ g_0 = (sec + p_0) * (f_0 + k_0) - 1 $$
-$$ g_1 = (sec + p_1) * (f_1 + k_1) - 1 $$
+$$f_0 = (sec+p_0)^{-1} \bmod q - k_0$$<br>
+$$f_1 = (sec+p_1)^{-1} \bmod q - k_1$$<br>
+this can be written mod q as two polynomials of the form:<br>
+$$g_0 = (sec + p_0) * (f_0 + k_0) - 1$$<br>
+$$g_1 = (sec + p_1) * (f_1 + k_1) - 1$$<br>
 These two polynomials can be written as a nice single polynomial eliminating some unknowns by taking [resultant](https://en.wikipedia.org/wiki/Resultant) of them. Hence its also called as eliminant:
 
 ```python
